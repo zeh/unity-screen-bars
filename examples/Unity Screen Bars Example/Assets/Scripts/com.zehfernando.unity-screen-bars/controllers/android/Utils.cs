@@ -7,7 +7,6 @@ namespace com.zehfernando.UnityScreenBars.android {
 		private static int queuedViewFlags = -1;
 		private static int queuedWindowFlags = -1;
 		private static bool hasQueuedFlagUpdates = false;
-		private static GameObjectSurrogate surrogate = null;
 
 		public static bool getViewFlag(int bitMask) {
 			return (getViewFlags() & bitMask) != 0;
@@ -70,15 +69,6 @@ namespace com.zehfernando.UnityScreenBars.android {
 			queueFlagUpdates();
 		}
 
-		private static GameObjectSurrogate getGameObject() {
-			if (surrogate == null) {
-				// We create a GameObject so we can run end-of-frame updates for flags (see queueFlagUpdates() for details)
-				GameObject surrogateObject  = new GameObject("AndroidScreenBarsSurrogate");
-				surrogate = surrogateObject.AddComponent<GameObjectSurrogate>();
-			}
-			return surrogate;
-		}
-
 		private static void queueFlagUpdates() {
 			// We perform View.* and Window.* flag updates in a pretty roundabout way:
 			// we call a coroutine at the end of the current frame, which then asks Android to run
@@ -91,8 +81,7 @@ namespace com.zehfernando.UnityScreenBars.android {
 			// * view flags can only be set on Android's UI thread
 			if (!hasQueuedFlagUpdates) {
 				hasQueuedFlagUpdates = true;
-				var go = getGameObject();
-				go.StartCoroutine(performFlagUpdatesOnUiThread());
+				GameObjectSurrogate.getInstance().StartCoroutine(performFlagUpdatesOnUiThread());
 			}
 		}
 
