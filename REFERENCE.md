@@ -20,11 +20,11 @@ Default: `false`
 
 ### `ScreenBars.statusBarTranslucent` (`bool`)
 
-Xxx
+Makes the status bar translucent when set to `true`. A translucent status bar renders on top of the existing content, with a semi-transparent background determined by the OS.
 
-Applies to: Android ?
+Applies to: Android (?)
 
-Default: ?
+Default: `false`.
 
 Caveats:
 
@@ -38,11 +38,11 @@ Applies to: Android 6.0+
 
 Default: `false`
 
-### `ScreenBars.statusBarBackgroundColor` (`bool`)
+### `ScreenBars.statusBarBackgroundColor` (`uint`)
 
-Xxx
+Sets the background color of the status bar. This should be an ARGB number in the format `0xAARRGGBB`; that is, it *must* contain the opacity (alpha) of the color.
 
-Applies to: Android ?
+Applies to: Android (?)
 
 Default: `0xff757575`
 
@@ -60,39 +60,38 @@ Applies to: Android ?
 
 ### `ScreenBars.navigationBarVisible` (`bool`)
 
-Xxx
+Hides or shows the navigation bar at the bottom of the screen, if one is needed.
 
-Applies to: Android ?
+Applies to: Android (all versions)
 
-Default: ?
+Default: `true`
 
 ### `ScreenBars.navigationBarTranslucent` (`bool`)
 
-Xxx
+Makes the navigation bar translucent when set to `true`. A translucent navigation bar renders on top of the existing content, with a semi-transparent background determined by the OS.
 
 Applies to: Android ?
 
-Default: ?
+Default: `false`
 
 Caveats:
 
 * When this property is enabled on Android, the value of `navigationBarBackgroundColor` is ignored.
 * When this property is enabled, it imples `navigationBarOverlay`, drawning atop the existing application content.
 
-
 ### `ScreenBars.navigationBarOverlay` (`bool`)
 
-Xxx
+When set to `true`, causes the navigation bar to float atop the rest of the screen content. This is somewhat similar to `navigationBarTranslucent`, but with a controllable background color via `navigationBarBackgroundColor`.
 
-Applies to: Android ?
+Applies to: Android (?)
 
-Default: ?
+Default: `false`
 
-### `ScreenBars.navigationBarBackgroundColor` (`bool`)
+### `ScreenBars.navigationBarBackgroundColor` (`uint`)
 
-Xxx
+Sets the background color of the navigation bar. This should be an ARGB number in the format `0xAARRGGBB`; that is, it *must* contain the opacity (alpha) of the color.
 
-Applies to: Android ?
+Applies to: Android (?)
 
 Default: `0xff000000`
 

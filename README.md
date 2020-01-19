@@ -19,9 +19,22 @@ Unity ScreenBars...
 
 TODO: UPM, manual?
 
-## Reference
+## How to use
 
-a [ref](REFERENCE.md)
+This library is called as a standalone, static class.
+
+```CS
+// Show status bar
+ScreenBars.statusBarVisible = true;
+
+// Dims all bars' icons
+ScreenBars.lowProfile = true;
+
+// Makes the status bar content light
+ScreenBars.statusBarForegroundDark = false;
+```
+
+Please check the [ref](REFERENCE.md) for a list of all available properties.
 
 ## Todo
 
