@@ -17,7 +17,60 @@ Unity ScreenBars...
 
 ## Installation
 
-TODO: UPM, manual?
+### Method 1: installing via Unity Package Manager and NPM (recommended; Unity 2018.1+)
+
+The [Unity Package Manager](https://docs.unity3d.com/Packages/com.unity.package-manager-ui@1.8/manual/index.html) (UPM) is a new method to manage external packages. It keeps package contents separate from your main project files.
+
+Using a [scoped registry](https://docs.unity3d.com/Manual/upm-scoped.html), you can use a version of this package that has been published to [NPM](https://www.npmjs.com/), a popular package host.
+
+On your project's `Packages/manifest.json` file, add a new entry to the `scopedRegistries` array (creating it if necessary):
+
+```json
+{
+  "name": "Zeh Fernando",
+  "url": "https://registry.npmjs.com",
+  "scopes": [ "com.zehfernando" ]
+}
+```
+
+Then, a new entry to the `dependencies` object:
+
+```json
+"com.zehfernando.unityscreenbars": "1.0.0"
+```
+
+After these changes, your `manifest.json` file should look something like this:
+
+```json
+{
+  "scopedRegistries": [
+    {
+      "name": "Zeh Fernando",
+      "url": "https://registry.npmjs.com",
+      "scopes": [ "com.zehfernando" ]
+    }
+  ],
+  "dependencies": {
+    "com.zehfernando.unityscreenbars": "1.0.0",
+	...many other entries...
+  }
+}
+```
+
+### Method 2: installing via Unity Package Manager and GIT (Unity 2018.1+)
+
+...TODO...
+
+```
+"com.zehfernando.unityscreenbars": "https://github.com/zeh/unity-screen-bars.git#package"
+```
+
+### Method 3: manual installation (not recommended)
+
+...TODO...
+
+If you don't use the Unity Package Manager, you can copy the folder from `lib/Assets/com.zehfernando.unityscreenbars` into your project's `Assets` folder.
+
 
 ## How to use
 
