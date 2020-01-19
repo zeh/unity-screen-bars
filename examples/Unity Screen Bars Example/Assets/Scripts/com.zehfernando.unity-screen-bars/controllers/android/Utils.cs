@@ -4,8 +4,11 @@ using UnityEngine;
 
 namespace com.zehfernando.UnityScreenBars.android {
 	public class Utils {
+		private static bool focusControlInitialized = false;
 		private static int queuedViewFlags = -1;
 		private static int queuedWindowFlags = -1;
+		private static int savedViewFlags = -1;
+		private static int savedWindowFlags = -1;
 		private static bool hasQueuedFlagUpdates = false;
 
 		public static bool getViewFlag(int bitMask) {
@@ -81,6 +84,7 @@ namespace com.zehfernando.UnityScreenBars.android {
 			// * view flags can only be set on Android's UI thread
 			if (!hasQueuedFlagUpdates) {
 				hasQueuedFlagUpdates = true;
+				initializeFocusControl();
 				GameObjectSurrogate.getInstance().StartCoroutine(performFlagUpdatesOnUiThread());
 			}
 		}
@@ -112,6 +116,29 @@ namespace com.zehfernando.UnityScreenBars.android {
 				queuedWindowFlags = -1;
 				hasQueuedFlagUpdates = false;
 			});
+		}
+
+		private static void initializeFocusControl() {
+			// In addition to queueing actual flag setting, we want to save a separate copy of the flag values
+			// every time focus is lost, and restore them once the application gains focus again, so we add
+			// events to handle that. This needs to be done because Unity itself overwrites all flags (likely
+			// to enforce the behavior expected by System.fullScreen's current value).
+			if (!focusControlInitialized) {
+				saveCurrentFlags();
+				GameObjectSurrogate.getInstance().onGainedFocus += restoreCurrentFlags;
+				GameObjectSurrogate.getInstance().onLostFocus += saveCurrentFlags;
+				focusControlInitialized = true;
+			}
+		}
+
+		private static void restoreCurrentFlags() {
+			if (savedViewFlags != -1) setViewFlags(savedViewFlags);
+			if (savedWindowFlags != -1) setWindowFlags(savedWindowFlags);
+		}
+
+		private static void saveCurrentFlags() {
+			savedViewFlags = getViewFlags();
+			savedWindowFlags = getWindowFlags();
 		}
 
 		public static void runOnAndroidUiThread(Action target) {
