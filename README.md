@@ -4,7 +4,7 @@
 
 It comes as a free, [Unity Package Manager](https://docs.unity3d.com/Manual/upm-parts.html)-installable script library.
 
-Unity ScreenBars is a more modern evolution of [`ApplicationChrome.cs`](https://github.com/zeh/unity-tidbits/blob/master/application/ApplicationChrome.cs), a script first published as a [a blog post](https://zehfernando.com/2015/unity-tidbits-changing-the-visibility-of-androids-navigation-and-status-bars-and-implementing-immersive-mode/).
+***Unity ScreenBars is still a work in progress and not stable enough for production use.***
 
 ## Advantages
 
@@ -34,7 +34,7 @@ ScreenBars.lowProfile = true;
 ScreenBars.statusBarForegroundDark = false;
 ```
 
-Please check the [ref](REFERENCE.md) for a list of all available properties.
+Please check the [reference](REFERENCE.md) for a list of all available properties.
 
 ## Todo
 
@@ -47,3 +47,7 @@ Please check the [ref](REFERENCE.md) for a list of all available properties.
   	* not working
   	* only works when setting translucent first?
   	! Only on Android 4.1+ https://developer.android.com/training/  system-ui/navigation#behind
+
+## Other acknowledgments
+
+Unity ScreenBars is a more modern evolution of [`ApplicationChrome.cs`](https://github.com/zeh/unity-tidbits/blob/master/application/ApplicationChrome.cs), a script first published as a [a blog post](https://zehfernando.com/2015/unity-tidbits-changing-the-visibility-of-androids-navigation-and-status-bars-and-implementing-immersive-mode/).
