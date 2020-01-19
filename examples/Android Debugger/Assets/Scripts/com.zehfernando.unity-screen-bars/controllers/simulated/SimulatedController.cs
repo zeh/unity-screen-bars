@@ -21,42 +21,27 @@ namespace com.zehfernando.UnityScreenBars.simulated {
 
 		public bool lowProfile {
 			get { return _lowProfile; }
-			set {
-				Debug.Log($"[ScreenBars] Simulating setting lowProfile with a value of {value}");
-				_lowProfile = value;
-			}
+			set { _lowProfile = value; }
 		}
 
 		public bool statusBarVisible {
 			get { return _statusBarVisible; }
-			set {
-				Debug.Log($"[ScreenBars] Simulating setting statusBarVisible with a value of {value}");
-				_statusBarVisible = value;
-			}
+			set { _statusBarVisible = value; }
 		}
 
 		public bool statusBarTranslucent {
 			get { return _statusBarTranslucent; }
-			set {
-				Debug.Log($"[ScreenBars] Simulating setting statusBarTranslucent with a value of {value}");
-				_statusBarTranslucent = value;
-			}
+			set { _statusBarTranslucent = value; }
 		}
 
 		public bool statusBarForegroundDark {
 			get { return _statusBarForegroundDark; }
-			set {
-				Debug.Log($"[ScreenBars] Simulating setting statusBarForegroundDark with a value of {value}");
-				_statusBarForegroundDark = value;
-			}
+			set { _statusBarForegroundDark = value; }
 		}
 
 		public uint statusBarBackgroundColor {
 			get { return _statusBarBackgroundColor; }
-			set {
-				Debug.Log($"[ScreenBars] Simulating setting statusBarBackgroundColor with a value of {value}");
-				_statusBarBackgroundColor = value;
-			}
+			set { _statusBarBackgroundColor = value; }
 		}
 
 		public int statusBarHeight {
@@ -65,42 +50,27 @@ namespace com.zehfernando.UnityScreenBars.simulated {
 
 		public bool navigationBarVisible {
 			get { return _navigationBarVisible; }
-			set {
-				Debug.Log($"[ScreenBars] Simulating setting navigationBarVisible with a value of {value}");
-				_navigationBarVisible = value;
-			}
+			set { _navigationBarVisible = value; }
 		}
 
 		public bool navigationBarTranslucent {
 			get { return _navigationBarTranslucent; }
-			set {
-				Debug.Log($"[ScreenBars] Simulating setting navigationBarTranslucent with a value of {value}");
-				_navigationBarTranslucent = value;
-			}
+			set { _navigationBarTranslucent = value; }
 		}
 
 		public bool navigationBarOverlay {
 			get { return _navigationBarOverlay; }
-			set {
-				Debug.Log($"[ScreenBars] Simulating setting navigationBarOverlay with a value of {value}");
-				_navigationBarOverlay = value;
-			}
+			set { _navigationBarOverlay = value; }
 		}
 
 		public bool navigationBarForegroundDark {
 			get { return _navigationBarForegroundDark; }
-			set {
-				Debug.Log($"[ScreenBars] Simulating setting navigationBarForegroundDark with a value of {value}");
-				_navigationBarForegroundDark = value;
-			}
+			set { _navigationBarForegroundDark = value; }
 		}
 
 		public uint navigationBarBackgroundColor {
 			get { return _navigationBarBackgroundColor; }
-			set {
-				Debug.Log($"[ScreenBars] Simulating setting navigationBarBackgroundColor with a value of {value}");
-				_navigationBarBackgroundColor = value;
-			}
+			set { _navigationBarBackgroundColor = value; }
 		}
 
 		public int navigationBarHeight {
