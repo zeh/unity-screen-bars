@@ -12,7 +12,7 @@ using UnityEngine;
 
 using com.zehfernando.UnityScreenBars;
 
-class ScreenBars {
+public class ScreenBars {
 	static readonly IController controller;
 
 	static ScreenBars() {

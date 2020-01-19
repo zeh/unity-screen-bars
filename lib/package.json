@@ -1,0 +1,17 @@
+{
+    "name": "com.zehfernando.unityscreenbars",
+    "displayName": "Unity ScreenBars",
+    "version": "1.0.0",
+    "unity": "2019.3",
+    "description": "A Unity package to control the appearance of status and navigation bars on mobile devices",
+    "category": "Interface",
+    "keywords": [
+		"navigation",
+        "screen",
+        "status",
+		"status bar",
+        "android",
+        "ios",
+        "unity"
+    ]
+}
